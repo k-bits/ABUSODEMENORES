@@ -262,7 +262,8 @@ import "../styles/global.css";
     </div>
 
     <!-- =====================================================
-         JUEGO 4 - JUEGO INCRUSTADO (DOLA)
+         JUEGO 4 - JUEGO INCRUSTADO (sin la barra superior)
+         Cambia 80px (en 2 lugares) si la barra queda cortada de más o de menos
     ====================================================== -->
 
     <div class="mx-auto mb-10 mt-20 max-w-5xl">
@@ -279,29 +280,17 @@ import "../styles/global.css";
         </p>
       </div>
 
-      <div class="overflow-hidden rounded-[2rem] border border-purple-100 bg-white shadow-xl">
+      <!-- El contenedor recorta la parte de arriba del iframe -->
+      <div class="h-[600px] overflow-hidden rounded-[2rem] border border-purple-100 bg-white shadow-xl md:h-[700px]">
         <iframe
           src="https://www.dola.com/building/render/a0b70c1846360?a=&share_token=E7535361-72A2-478D-A276-001B5C73D195"
           title="Juego interactivo"
-          class="h-[600px] w-full border-0 md:h-[700px]"
+          class="-mt-[80px] h-[calc(100%+80px)] w-full border-0"
           allow="fullscreen; autoplay; gamepad; clipboard-write"
           allowfullscreen
           loading="lazy"
         ></iframe>
       </div>
-
-      <!-- Respaldo por si el iframe no carga -->
-      <p class="mt-4 text-center text-sm text-gray-500">
-        ¿No se ve el juego?
-        <a
-          href="https://www.dola.com/building/render/a0b70c1846360?a=&share_token=E7535361-72A2-478D-A276-001B5C73D195"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-bold text-purple-600 underline hover:text-purple-700"
-        >
-          Ábrelo aquí
-        </a>
-      </p>
 
     </div>
 
